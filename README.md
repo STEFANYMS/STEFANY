@@ -7,6 +7,10 @@ Desarrollado por:
 
 Stefany Moreno Samudio
 
+| Contacto  |
+-----------------
+| smorenos1@ucentral.edu.co |
+
 Cliente:
 
 NOBSA MESA NICOLLE VANESSA
