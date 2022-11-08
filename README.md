@@ -1,5 +1,12 @@
 # App Compra_Venta
-1.	Construir una aplicación que guarde la compra y la venta de artículos (lista)
-2.	Registrar producto de venta y producto de compra
-3.	Registrar el valor del producto de venta y de compra 
-4.	Ingresar la fecha de compra y venta del o los artículos
+Aplicación App Compra_Venta
+
+Construir una aplicación que guarde la compra y la venta de artículos (lista), donde se pueda registrar un producto de venta o producto de compra,registrar el valor del producto de venta o de compra, características principales de los artículos, forma de pago y poder ingresar la fecha de compra y venta de estos mismo, al igual que generar una prorroga si la fecha de retiro u pago se atrasan.
+
+Desarrollado por:
+
+Stefany Moreno Samudio
+
+Cliente:
+
+NOBSA MESA NICOLLE VANESSA
