@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="static/styles/bootstrap.min.css" th:href="@{/styles/bootstrap.min.css}" rel="stylesheet">
+    <link href="static/styles/styles.css" th:href="@{/styles/styles.css}" rel="stylesheet">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+        background-color: #971212;
+      }
+    </style>
+    <link rel="shortcut icon" href="static/images/log-icon.png"    th:href= "@{/images/log-icon.png}">
+    <link href="static/styles/sidebars.css" rel="stylesheet" th:href= "@{/styles/sidebars.css}">
+    <link rel="stylesheet" href="static/styles/buy.css"th:href= "@{/styles/buy.css}">
+    <script
+      src="static/js/sweetalert2.all.min.js" 
+      th:src="@{/js/sweetalert2.all.min.js}"
+    ></script>
+    <title>App Compra Venta</title>
+</head>
+<body>
+  <main>
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark " style="width: 280px;">
+          <span class="fs-5 text-center">AppCompraVenta</span>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a href="#" class="nav-link active" aria-current="page">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shop" viewBox="0 0 16 16">
+                <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z"/>
+              </svg>
+            </a>
+          </li>
+          <!-- <li>
+            <a href="#" class="nav-link text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-x-fill" viewBox="0 0 16 16">
+                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7.354 5.646 8.5 6.793l1.146-1.147a.5.5 0 0 1 .708.708L9.207 7.5l1.147 1.146a.5.5 0 0 1-.708.708L8.5 8.207 7.354 9.354a.5.5 0 1 1-.708-.708L7.793 7.5 6.646 6.354a.5.5 0 1 1 .708-.708z"/>
+              </svg>
+              Venta
+            </a>
+          </li> -->
+        </ul>
+        <hr>
+        <div class="dropdown">
+          <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false" th:text="${usuario.nombre}">
+            <strong></strong>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item" href="#">Proximamente...</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" th:href="@{/index}">Sign out</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mx-auto" id="body">
+        <div class="container w-100 mt-5 rounded shadow">
+          <div class="table_header">
+            <p class="h1">Articulos</p>
+            <!-- <select name="" id="">
+              <option value="">Ordenar por</option>
+              <option value="">Nombre</option>
+              <option value="">Precio</option>
+              <option value="">Tiempo de gala</option>
+            </select> -->
+            <!-- <div class="input_search">
+              <input type="search" placeholder="Buscar">
+            </div> -->
+          </div>
+          <table>
+            <thead class="text-center">
+              <th>Nombre
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-contract" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M3.646 13.854a.5.5 0 0 0 .708 0L8 10.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708zm0-11.708a.5.5 0 0 1 .708 0L8 5.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708z"/>
+                </svg>
+              </th>
+              <th>
+                Precio
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-contract" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M3.646 13.854a.5.5 0 0 0 .708 0L8 10.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708zm0-11.708a.5.5 0 0 1 .708 0L8 5.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708z"/>
+                </svg>
+              </th>
+              <th>
+                Descripcion
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-contract" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M3.646 13.854a.5.5 0 0 0 .708 0L8 10.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708zm0-11.708a.5.5 0 0 1 .708 0L8 5.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708z"/>
+                </svg>
+              </th>
+              <th>
+                Tiempo de gala
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-contract" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M3.646 13.854a.5.5 0 0 0 .708 0L8 10.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708zm0-11.708a.5.5 0 0 1 .708 0L8 5.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708z"/>
+                </svg>
+              </th>
+              <th>
+                Comprar
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-contract" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M3.646 13.854a.5.5 0 0 0 .708 0L8 10.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708zm0-11.708a.5.5 0 0 1 .708 0L8 5.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708z"/>
+                </svg>
+              </th>
+            </thead>
+            <tbody>
+              <tr th:each="dato : ${articulos}">
+                <td th:text="${dato.nombre}">ND</td>
+                <td th:text="${precioArticulo.get(dato.serial)}">ND</td>
+                <td th:text="${dato.descripcion}">ND</td>
+                <td th:text="${tiempo}">ND</td>
+                <td>
+                  <a href="#" th:href="@{/comprar/}+${dato.serial}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-fill" viewBox="0 0 16 16" id="icons">
+                      <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z"/>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="table_fotter">
+            <p>Total articulos: <span th:text="${size}"></span></p>
+          </div>
+        </div>
+      </div>
+  </main>
+  <script src="static/js/sidebars.js" th:href="@{/js/sidebars.js}"> </script>
+  <script src="static/js/bootstrap.bundle.min.js" th:href="@{/js/bootstrap.bundle.min.js}"></script>
+</body>
+<script th:if="${param.buy}" th:inline="javascript">
+  const { value: pago } = await Swal.fire({
+    title: "Compra",
+    text: "Por favor seleccione el metodo de pago",
+    input: 'select',
+    inputOptions: {
+        efectivo: 'efectivo',
+    },
+    inputPlaceholder: 'Selecciona un metodo de pago',
+    icon: "success",
+    confirmButtonText: "Comprar",
+    showCancelButton: true,
+    timer: 2000,
+    toast: false,
+    position: "center",
+  });
+</script>
+</html>

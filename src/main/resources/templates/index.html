@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="styles/bootstrap.min.css" rel="stylesheet">
+    <link href="static/styles/styles.css" th:href="@{styles/styles.css}" rel="stylesheet">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <link rel="shortcut icon" href="images/log-icon.png">
+    <link href="static/styles/signin.css" th:href="@{styles/signin.css}"  rel="stylesheet">
+    <title>App Compra Venta</title>
+  </head>
+  <body>
+    <main class="form-signin shadow-lg border">
+      <form th:action="@{/usuario}" method="post" th:object="${usuario}">
+        <h1 class="h3 mb-3 fw-normal text-center">Bienvenido</h1>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="floatingInput" name="cedula" placeholder="name@example.com" required maxlength="10">
+          <label for="floatingInput">Documento de identidad</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" id="floatingPassword" name="clave" placeholder="Password" required>
+          <label for="floatingPassword">Clave</label>
+        </div>
+        <div class="checkbox mb-3">
+        </div>
+        <button class="w-100 btn btn-lg btn btn-danger" type="submit">Ingresar</button>
+      </form>
+    </main>
+    <script src="static/js/bootstrap.bundle.min.js" th:src="@{js/bootstrap.bundle.min.js}"></script>
+  </body>
+</html>
